@@ -1,6 +1,10 @@
 <?php
 require_once(__DIR__ . "/util/config.php");
 
+//Teste
+/*session_start();
+print $_SESSION[SESSAO_USUARIO_NOME];*/
+
 require_once(__DIR__ . "/view/include/header.php");
 require_once(__DIR__ . "/view/include/menu.php");
 ?>

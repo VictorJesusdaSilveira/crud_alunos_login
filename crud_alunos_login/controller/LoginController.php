@@ -21,6 +21,7 @@ class LoginController{
        
             if($usuario) {
                 //Armazenar na sessão
+                $this->loginService->salvarUsuarioSessao($usuario);
             
             } else {
                 array_push($erros, "Login ou senha inválidos!");
