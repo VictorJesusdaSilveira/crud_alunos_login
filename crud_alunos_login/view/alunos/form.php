@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . "/../login/verifica.php");
+
 require_once(__DIR__ . "/../../controller/CursoController.php");
 
 $cursoCont = new CursoController();

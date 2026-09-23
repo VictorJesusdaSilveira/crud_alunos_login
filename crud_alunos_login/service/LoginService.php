@@ -17,11 +17,42 @@ class LoginService{
     }
 
     public function salvarUsuarioSessao(Usuario $usuario){
-        session_start();
+        $this->iniciarSessao();
         $_SESSION[SESSAO_USUARIO_ID] = $usuario->getId();
         $_SESSION[SESSAO_USUARIO_NOME] = $usuario->getNome();
     }
+
+    public function usuarioEstaLogado(): bool{
+        $this->iniciarSessao();
+        return isset($_SESSION[SESSAO_USUARIO_ID]);
+         
+    }
+
+    public function encerrarSessao(){
+        $this->iniciarSessao();
+
+        session_unset();
+        session_destroy();
+    }
+
+    public function nomeUsuarioLogado(): string{
+        if($this->usuarioEstaLogado()){
+            return $_SESSION[SESSAO_USUARIO_NOME];
+        }else{
+            return "[Erro]";
+        }
+
+    }
+
+
+    private function iniciarSessao(){
+        if(session_status() != PHP_SESSION_ACTIVE){
+            session_start();
+        }
+    }
 }
+
+
 
 
 

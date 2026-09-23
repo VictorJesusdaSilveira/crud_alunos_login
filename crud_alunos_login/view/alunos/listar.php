@@ -1,8 +1,10 @@
 <?php
-//Teste da conexão com o banco de dados
-//require_once(__DIR__ . "/../../util/Connection.php");
-//$conn = Connection::getConnection();
-//print_r($conn);
+/*Teste da conexão com o banco de dados
+require_once(__DIR__ . "/../../util/Connection.php");
+$conn = Connection::getConnection();
+print_r($conn);*/
+
+require_once(__DIR__ . "/../login/verifica.php");
 
 require_once(__DIR__ . "/../../controller/AlunoController.php");
 
